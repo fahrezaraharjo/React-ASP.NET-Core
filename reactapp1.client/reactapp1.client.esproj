@@ -8,4 +8,15 @@
     <!-- Folder where production build objects will be placed -->
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
   </PropertyGroup>
+  <ItemGroup>
+    <Script Include="tsconfig.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\components\components\" />
+    <Folder Include="src\components\layouts\" />
+    <Folder Include="src\components\sections\" />
+    <Folder Include="src\components\ui\" />
+    <Folder Include="src\constants\" />
+    <Folder Include="src\pages\" />
+  </ItemGroup>
 </Project>

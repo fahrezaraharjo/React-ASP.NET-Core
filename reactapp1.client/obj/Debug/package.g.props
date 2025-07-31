@@ -3,22 +3,49 @@
   <PropertyGroup>
     <PackageJsonName Condition="$(PackageJsonName) == ''">reactapp1.client</PackageJsonName>
     <PackageJsonPrivate Condition="$(PackageJsonPrivate) == ''">true</PackageJsonPrivate>
-    <PackageJsonVersion Condition="$(PackageJsonVersion) == ''">0.0.0</PackageJsonVersion>
+    <PackageJsonVersion Condition="$(PackageJsonVersion) == ''">1.0.0</PackageJsonVersion>
     <PackageJsonType Condition="$(PackageJsonType) == ''">module</PackageJsonType>
     <PackageJsonScriptsDev Condition="$(PackageJsonScriptsDev) == ''">vite</PackageJsonScriptsDev>
     <PackageJsonScriptsBuild Condition="$(PackageJsonScriptsBuild) == ''">vite build</PackageJsonScriptsBuild>
     <PackageJsonScriptsLint Condition="$(PackageJsonScriptsLint) == ''">eslint .</PackageJsonScriptsLint>
     <PackageJsonScriptsPreview Condition="$(PackageJsonScriptsPreview) == ''">vite preview</PackageJsonScriptsPreview>
+    <PackageJsonDependenciesProgressKendoReactAnimation Condition="$(PackageJsonDependenciesProgressKendoReactAnimation) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactAnimation>
+    <PackageJsonDependenciesProgressKendoReactButtons Condition="$(PackageJsonDependenciesProgressKendoReactButtons) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactButtons>
+    <PackageJsonDependenciesProgressKendoReactDataTools Condition="$(PackageJsonDependenciesProgressKendoReactDataTools) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactDataTools>
+    <PackageJsonDependenciesProgressKendoReactDateinputs Condition="$(PackageJsonDependenciesProgressKendoReactDateinputs) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactDateinputs>
+    <PackageJsonDependenciesProgressKendoReactDialogs Condition="$(PackageJsonDependenciesProgressKendoReactDialogs) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactDialogs>
+    <PackageJsonDependenciesProgressKendoReactDropdowns Condition="$(PackageJsonDependenciesProgressKendoReactDropdowns) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactDropdowns>
+    <PackageJsonDependenciesProgressKendoReactGrid Condition="$(PackageJsonDependenciesProgressKendoReactGrid) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactGrid>
+    <PackageJsonDependenciesProgressKendoReactIndicators Condition="$(PackageJsonDependenciesProgressKendoReactIndicators) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactIndicators>
+    <PackageJsonDependenciesProgressKendoReactInputs Condition="$(PackageJsonDependenciesProgressKendoReactInputs) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactInputs>
+    <PackageJsonDependenciesProgressKendoReactLabels Condition="$(PackageJsonDependenciesProgressKendoReactLabels) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactLabels>
+    <PackageJsonDependenciesProgressKendoReactLayout Condition="$(PackageJsonDependenciesProgressKendoReactLayout) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactLayout>
+    <PackageJsonDependenciesProgressKendoReactListbox Condition="$(PackageJsonDependenciesProgressKendoReactListbox) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactListbox>
+    <PackageJsonDependenciesProgressKendoReactNotification Condition="$(PackageJsonDependenciesProgressKendoReactNotification) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactNotification>
+    <PackageJsonDependenciesProgressKendoReactPopup Condition="$(PackageJsonDependenciesProgressKendoReactPopup) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactPopup>
+    <PackageJsonDependenciesProgressKendoReactProgressbars Condition="$(PackageJsonDependenciesProgressKendoReactProgressbars) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactProgressbars>
+    <PackageJsonDependenciesProgressKendoReactTooltip Condition="$(PackageJsonDependenciesProgressKendoReactTooltip) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactTooltip>
+    <PackageJsonDependenciesProgressKendoSvgIcons Condition="$(PackageJsonDependenciesProgressKendoSvgIcons) == ''">^4.5.0</PackageJsonDependenciesProgressKendoSvgIcons>
+    <PackageJsonDependenciesProgressKendoThemeDefault Condition="$(PackageJsonDependenciesProgressKendoThemeDefault) == ''">^11.2.0</PackageJsonDependenciesProgressKendoThemeDefault>
+    <PackageJsonDependenciesTanstackReactQuery Condition="$(PackageJsonDependenciesTanstackReactQuery) == ''">^5.83.0</PackageJsonDependenciesTanstackReactQuery>
+    <PackageJsonDependenciesTanstackReactQueryDevtools Condition="$(PackageJsonDependenciesTanstackReactQueryDevtools) == ''">^5.83.0</PackageJsonDependenciesTanstackReactQueryDevtools>
+    <PackageJsonDependenciesTanstackReactTable Condition="$(PackageJsonDependenciesTanstackReactTable) == ''">^8.21.3</PackageJsonDependenciesTanstackReactTable>
+    <PackageJsonDependenciesProcess Condition="$(PackageJsonDependenciesProcess) == ''">^0.11.10</PackageJsonDependenciesProcess>
     <PackageJsonDependenciesReact Condition="$(PackageJsonDependenciesReact) == ''">^19.1.0</PackageJsonDependenciesReact>
     <PackageJsonDependenciesReactDom Condition="$(PackageJsonDependenciesReactDom) == ''">^19.1.0</PackageJsonDependenciesReactDom>
+    <PackageJsonDependenciesReactHookForm Condition="$(PackageJsonDependenciesReactHookForm) == ''">^7.61.1</PackageJsonDependenciesReactHookForm>
+    <PackageJsonDependenciesReactRouterDom Condition="$(PackageJsonDependenciesReactRouterDom) == ''">^7.7.1</PackageJsonDependenciesReactRouterDom>
+    <PackageJsonDependenciesZod Condition="$(PackageJsonDependenciesZod) == ''">^4.0.14</PackageJsonDependenciesZod>
+    <PackageJsonDependenciesZustand Condition="$(PackageJsonDependenciesZustand) == ''">^5.0.7</PackageJsonDependenciesZustand>
     <PackageJsonDevdependenciesEslintJs Condition="$(PackageJsonDevdependenciesEslintJs) == ''">^9.30.1</PackageJsonDevdependenciesEslintJs>
-    <PackageJsonDevdependenciesTypesReact Condition="$(PackageJsonDevdependenciesTypesReact) == ''">^19.1.8</PackageJsonDevdependenciesTypesReact>
-    <PackageJsonDevdependenciesTypesReactDom Condition="$(PackageJsonDevdependenciesTypesReactDom) == ''">^19.1.6</PackageJsonDevdependenciesTypesReactDom>
+    <PackageJsonDevdependenciesTypesReact Condition="$(PackageJsonDevdependenciesTypesReact) == ''">^19.1.9</PackageJsonDevdependenciesTypesReact>
+    <PackageJsonDevdependenciesTypesReactDom Condition="$(PackageJsonDevdependenciesTypesReactDom) == ''">^19.1.7</PackageJsonDevdependenciesTypesReactDom>
     <PackageJsonDevdependenciesVitejsPluginReact Condition="$(PackageJsonDevdependenciesVitejsPluginReact) == ''">^4.6.0</PackageJsonDevdependenciesVitejsPluginReact>
     <PackageJsonDevdependenciesEslint Condition="$(PackageJsonDevdependenciesEslint) == ''">^9.30.1</PackageJsonDevdependenciesEslint>
     <PackageJsonDevdependenciesEslintPluginReactHooks Condition="$(PackageJsonDevdependenciesEslintPluginReactHooks) == ''">^5.2.0</PackageJsonDevdependenciesEslintPluginReactHooks>
     <PackageJsonDevdependenciesEslintPluginReactRefresh Condition="$(PackageJsonDevdependenciesEslintPluginReactRefresh) == ''">^0.4.20</PackageJsonDevdependenciesEslintPluginReactRefresh>
     <PackageJsonDevdependenciesGlobals Condition="$(PackageJsonDevdependenciesGlobals) == ''">^16.3.0</PackageJsonDevdependenciesGlobals>
+    <PackageJsonDevdependenciesTypescript Condition="$(PackageJsonDevdependenciesTypescript) == ''">^5.8.3</PackageJsonDevdependenciesTypescript>
     <PackageJsonDevdependenciesVite Condition="$(PackageJsonDevdependenciesVite) == ''">^7.0.4</PackageJsonDevdependenciesVite>
   </PropertyGroup>
 </Project>
