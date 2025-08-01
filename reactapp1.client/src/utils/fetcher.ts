@@ -11,7 +11,7 @@ export const fetcher = async <T>(
 
     const isFormData = body instanceof FormData;
 
-    const res = await fetch(url, {
+    const res = await fetch(`${import.meta.env.VITE_BASE_URL}${url}`, {
         method,
         headers: {
             ...(isFormData ? {} : { 'Content-Type': 'application/json' }),
