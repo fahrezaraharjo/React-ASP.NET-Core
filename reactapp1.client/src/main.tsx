@@ -1,23 +1,16 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App'
-import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
-import {ReactQueryDevtools} from "@tanstack/react-query-devtools";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import GlobalNotification from './components/GlobalNotification';
 
-const client = new QueryClient()
+const queryClient = new QueryClient();
 
-const container = document.getElementById('root')
-
-if (!container) {
-    throw new Error('Root container not found')
-}
-
-createRoot(container).render(
-  <StrictMode>
-      <QueryClientProvider client={client}>
-        <App />
-          <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
-  </StrictMode>,
-)
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <App />
+      <GlobalNotification />
+    </QueryClientProvider>
+  </React.StrictMode>
+);
