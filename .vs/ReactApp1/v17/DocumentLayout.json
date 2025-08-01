@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\fahre\\OneDrive\\Dokumen\\belajar\\ReactApp1\\",
+  "WorkspaceRootPath": "D:\\Workspace\\.NET\\React-ASP.NET-Core\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{372AB1E8-7CBB-9DB4-7313-847C4133320E}|reactapp1.client\\reactapp1.client.esproj|c:\\users\\fahre\\onedrive\\dokumen\\belajar\\reactapp1\\reactapp1.client\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{372AB1E8-7CBB-9DB4-7313-847C4133320E}|reactapp1.client\\reactapp1.client.esproj|solutionrelative:reactapp1.client\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{21C93D2C-8FA3-4F98-89F6-016E6FFC91F0}|ReactApp1.API\\ReactApp1.API.csproj|d:\\workspace\\.net\\react-asp.net-core\\reactapp1.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21C93D2C-8FA3-4F98-89F6-016E6FFC91F0}|ReactApp1.API\\ReactApp1.API.csproj|solutionrelative:reactapp1.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{372AB1E8-7CBB-9DB4-7313-847C4133320E}|reactapp1.client\\reactapp1.client.esproj|c:\\users\\fahre\\onedrive\\dokumen\\belajar\\reactapp1\\reactapp1.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{372AB1E8-7CBB-9DB4-7313-847C4133320E}|reactapp1.client\\reactapp1.client.esproj|solutionrelative:reactapp1.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{21C93D2C-8FA3-4F98-89F6-016E6FFC91F0}|ReactApp1.API\\ReactApp1.API.csproj|d:\\workspace\\.net\\react-asp.net-core\\reactapp1.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21C93D2C-8FA3-4F98-89F6-016E6FFC91F0}|ReactApp1.API\\ReactApp1.API.csproj|solutionrelative:reactapp1.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,36 +18,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 647,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "package.json",
-              "DocumentMoniker": "C:\\Users\\fahre\\OneDrive\\Dokumen\\belajar\\ReactApp1\\reactapp1.client\\package.json",
-              "RelativeDocumentMoniker": "reactapp1.client\\package.json",
-              "ToolTip": "C:\\Users\\fahre\\OneDrive\\Dokumen\\belajar\\ReactApp1\\reactapp1.client\\package.json",
-              "RelativeToolTip": "reactapp1.client\\package.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-30T13:06:31.274Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Workspace\\.NET\\React-ASP.NET-Core\\ReactApp1.API\\Program.cs",
+              "RelativeDocumentMoniker": "ReactApp1.API\\Program.cs",
+              "ToolTip": "D:\\Workspace\\.NET\\React-ASP.NET-Core\\ReactApp1.API\\Program.cs",
+              "RelativeToolTip": "ReactApp1.API\\Program.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAkwCsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-01T03:48:43.778Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "App.jsx",
-              "DocumentMoniker": "C:\\Users\\fahre\\OneDrive\\Dokumen\\belajar\\ReactApp1\\reactapp1.client\\src\\App.jsx",
-              "RelativeDocumentMoniker": "reactapp1.client\\src\\App.jsx",
-              "ToolTip": "C:\\Users\\fahre\\OneDrive\\Dokumen\\belajar\\ReactApp1\\reactapp1.client\\src\\App.jsx",
-              "RelativeToolTip": "reactapp1.client\\src\\App.jsx",
-              "ViewState": "AgIAABgAAAAAAgAAAAAAwAUAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-07-30T13:03:21.143Z",
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Workspace\\.NET\\React-ASP.NET-Core\\ReactApp1.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "ReactApp1.API\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\Workspace\\.NET\\React-ASP.NET-Core\\ReactApp1.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "ReactApp1.API\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-01T03:47:27.975Z",
               "EditorCaption": ""
             }
           ]

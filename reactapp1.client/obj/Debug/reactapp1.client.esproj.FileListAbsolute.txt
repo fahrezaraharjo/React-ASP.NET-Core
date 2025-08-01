@@ -1,2 +1,3 @@
 C:/Users/fahre/OneDrive/Dokumen/belajar/ReactApp1/reactapp1.client/obj/Debug/reactapp1.client.esproj.CoreCompileInputs.cache
 /Users/rizkyalviandra/Documents/Dago/React-ASP.NET-Core/reactapp1.client/obj/Debug/reactapp1.client.esproj.CoreCompileInputs.cache
+D:\Workspace\.NET\React-ASP.NET-Core\reactapp1.client\obj\Debug\reactapp1.client.esproj.CoreCompileInputs.cache
