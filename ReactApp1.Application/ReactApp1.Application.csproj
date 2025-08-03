@@ -6,4 +6,17 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="15.0.1" />
+      <PackageReference Include="MediatR" Version="13.0.0" />
+      <PackageReference Include="SonarAnalyzer.CSharp" Version="10.15.0.120848">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ReactApp1.Domain\ReactApp1.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using ReactApp1.Server.Dump;
-using ReactApp1.Server.Dump.Auth;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using ReactApp1.API.Configuration.Auth;
+using ReactApp1.API.Shared.Responses;
 
-namespace ReactApp1.Server.Controllers
+namespace ReactApp1.API.Controllers
 {
     [ApiController]
     [Route("api/auth")]

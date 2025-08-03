@@ -16,14 +16,20 @@
       <Version>8.*-*</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.13.0" />
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="10.15.0.120848">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.13.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ReactApp1.Application\ReactApp1.Application.csproj" />
     <ProjectReference Include="..\reactapp1.client\reactapp1.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\ReactApp1.Infrastructure\ReactApp1.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
