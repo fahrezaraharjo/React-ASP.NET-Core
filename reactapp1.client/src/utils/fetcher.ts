@@ -1,49 +1,38 @@
-export const fetcher = async <T>(
-    url: string,
-    method: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE',
-    body?: Record<string, unknown> | FormData,
-    headers: HeadersInit = {}
-): Promise<T> => {
-    const token = document.cookie
-        .split('; ')
-        .find((row) => row.startsWith('token='))
-        ?.split('=')[1];
+// src/utils/fetcher.ts
+export type FetchMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
 
-    const isFormData = body instanceof FormData;
+interface FetcherOptions {
+  method?: FetchMethod;
+  body?: any;
+  headers?: Record<string, string>;
+  params?: Record<string, string | number>;
+}
 
-    const res = await fetch(`${import.meta.env.VITE_BASE_URL}${url}`, {
-        method,
-        headers: {
-            ...(isFormData ? {} : { 'Content-Type': 'application/json' }),
-            ...(token ? { Authorization: `Bearer ${token}` } : {}),
-            ...headers,
-        },
-        ...(body ? { body: isFormData ? body : JSON.stringify(body) } : {}),
-        // Hanya aktifkan ini jika kamu benar-benar perlu cookie dikirim ke domain lain
-        credentials: 'include',
-    });
+export async function fetcher<T = any>(
+  url: string,
+  { method = 'GET', body, headers, params }: FetcherOptions = {}
+): Promise<T> {
+  let fullUrl = url;
 
-    if (!res.ok) {
-        const contentType = res.headers.get('Content-Type');
-        let errorMessage = 'Request failed';
+  // Add query params if present
+  if (params) {
+    const queryString = new URLSearchParams(params as Record<string, string>).toString();
+    fullUrl += `?${queryString}`;
+  }
 
-        try {
-            if (contentType?.includes('application/json')) {
-                const error = await res.json();
-                errorMessage = error.message || error.error || errorMessage;
-            } else {
-                errorMessage = await res.text();
-            }
-        } catch {
-            // fallback
-        }
+  const response = await fetch(fullUrl, {
+    method,
+    headers: {
+      'Content-Type': 'application/json',
+      ...(headers || {}),
+    },
+    body: body ? JSON.stringify(body) : undefined,
+  });
 
-        throw new Error(errorMessage);
-    }
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(errorText || 'Network response was not ok');
+  }
 
-    if (res.status === 204) {
-        return null as T;
-    }
-
-    return res.json();
-};
+  return response.json();
+}

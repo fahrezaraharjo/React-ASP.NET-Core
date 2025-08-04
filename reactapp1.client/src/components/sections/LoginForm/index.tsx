@@ -1,21 +1,36 @@
-import React, {useCallback} from 'react'
-import {Input} from '@progress/kendo-react-inputs'
-import {Button} from '@progress/kendo-react-buttons'
-import {Label, Error} from '@progress/kendo-react-labels'
-import {FieldWrapper} from '@progress/kendo-react-form'
-import {BoEye, BoEyeClosed} from "solar-icon-react/bo";
-import {Controller, useForm} from "react-hook-form";
+import React, { useState } from 'react'
+import { Input } from '@progress/kendo-react-inputs'
+import { Button } from '@progress/kendo-react-buttons'
+import { Label, Error } from '@progress/kendo-react-labels'
+import { FieldWrapper } from '@progress/kendo-react-form'
+import { BoEye, BoEyeClosed } from "solar-icon-react/bo"
+import { Controller, useForm } from "react-hook-form"
 import * as z from 'zod'
-import {LoginSchema} from "../../../utils/validations/loginSchema";
-import {zodResolver} from '@hookform/resolvers/zod'
-import {Card, CardBody, CardHeader} from "@progress/kendo-react-layout";
-import {useLogin} from "../../../hooks";
+import { LoginSchema } from "../../../utils/validations/loginSchema"
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Card, CardBody, CardHeader } from "@progress/kendo-react-layout"
+import { useApiMutation } from '../../../hooks'
+import { showSuccessToast, showErrorToast } from '../../../utils/toast'
+import bgImage from '../../../assets/bgLogin.png'
+import CustomKendoButton from '../../CustomButton'
+
+type LoginResponse = {
+    status: number
+    message: string
+    data: string
+}
 
 type ILoginForm = z.infer<typeof LoginSchema>
+
 export default function LoginForm() {
-    const [show, setShow] = React.useState(false)
-    
-    const {control, register, formState: {errors}, handleSubmit} = useForm<ILoginForm>({
+    const [show, setShow] = useState(false)
+
+    const {
+        control,
+        formState: { errors },
+        handleSubmit,
+        setError,
+    } = useForm<ILoginForm>({
         resolver: zodResolver(LoginSchema),
         defaultValues: {
             username: '',
@@ -23,35 +38,71 @@ export default function LoginForm() {
         }
     })
 
-            const onSubmit = async (val: ILoginForm) => {
-                const response = await fetch('/api/auth/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(val),
+    const loginMutation = useApiMutation<LoginResponse, ILoginForm>({
+        url: '/api/auth/login',
+        method: 'POST',
+        options: {
+            onSuccess: (data) => {
+                sessionStorage.setItem('token', data.data)
+                showSuccessToast('Login berhasil!')
+            },
+            onError: () => {
+                setError('username', {
+                    type: 'manual',
+                    message: 'Login gagal. Periksa kembali username atau password.',
                 })
-                const data = response.ok
-                if (!response.ok) {
-                    console.error(response.statusText)
-                }
-                console.info(data)
-            };
+                showErrorToast('Login gagal. Username atau password salah.')
+            }
+        }
+    })
 
-            const toggleShow = () => setShow((prev) => !prev)
-            return(
-        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%'}}>
-            <form style={{display: "flex", flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }} onSubmit={handleSubmit(onSubmit)}>
-                <Card>
-                    <CardHeader style={{display: 'flex', justifyContent: 'center'}}>
-                        <p style={{fontWeight: 'bolder'}}>Login Form</p>
+    const onSubmit = (values: ILoginForm) => {
+        loginMutation.mutate(values)
+    }
+
+    const toggleShow = () => setShow(prev => !prev)
+
+    return (
+        <div style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundImage: `url(${bgImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            overflow: 'hidden',
+        }}>
+            <form
+                onSubmit={handleSubmit(onSubmit)}
+                style={{
+                    width: '100%',
+                    maxWidth: 400
+                }}
+            >
+                <Card style={{
+                    padding: 20,
+                    borderRadius: 16,
+                    background: 'rgba(255, 255, 255, 0.15)',
+                    boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+                    backdropFilter: 'blur(12px)',
+                    WebkitBackdropFilter: 'blur(12px)',
+                    border: '1px solid rgba(255, 255, 255, 0.18)',
+                    color: '#fff',
+                }}>
+                    <CardHeader style={{ justifyContent: 'center', display: 'flex' }}>
+                        <h2 style={{ margin: 0, fontWeight: 700, fontSize: 22 }}>Login</h2>
                     </CardHeader>
+
                     <CardBody>
                         <FieldWrapper>
-                            <Label>
-                                Username
-                            </Label>
-                            <div className={'k-form-field-wrap'} style={{ position: 'relative' }}>
+                            <Label style={{ marginBottom: 5 }}>Username</Label>
+                            <div className="k-form-field-wrap" style={{ position: 'relative' }}>
                                 <Controller
                                     name="username"
                                     control={control}
@@ -59,31 +110,28 @@ export default function LoginForm() {
                                         <Input
                                             value={field.value}
                                             onChange={(e) => field.onChange(e.value)}
-                                            type='text'
-                                            placeholder='Username'
+                                            type="text"
+                                            placeholder="Enter your username"
                                         />
                                     )}
                                 />
-                                {errors.username && (
-                                    <Error>{errors.username.message}</Error>
-                                )}
+                                {errors.username && <Error>{errors.username.message}</Error>}
                             </div>
                         </FieldWrapper>
-                        <FieldWrapper style={{marginTop: 10}}>
-                            <Label>
-                                Password
-                            </Label>
-                            <div className={'k-form-field-wrap'} style={{ position: 'relative' }}>
-                                <Controller 
+
+                        <FieldWrapper style={{ marginTop: 20 }}>
+                            <Label style={{ marginBottom: 5 }}>Password</Label>
+                            <div className="k-form-field-wrap" style={{ position: 'relative' }}>
+                                <Controller
                                     name="password"
                                     control={control}
-                                    render={({field}) => (
-                                        <div style={{position: 'relative'}}>
+                                    render={({ field }) => (
+                                        <div style={{ position: 'relative' }}>
                                             <Input
                                                 value={field.value}
                                                 onChange={(e) => field.onChange(e.value)}
                                                 type={show ? 'text' : 'password'}
-                                                placeholder='Password'
+                                                placeholder="Enter your password"
                                                 style={{ paddingRight: 40 }}
                                             />
                                             <span
@@ -91,24 +139,38 @@ export default function LoginForm() {
                                                 style={{
                                                     position: 'absolute',
                                                     right: 10,
-                                                    top: 7,
-                                                    cursor: 'pointer',
+                                                    top: '50%',
+                                                    transform: 'translateY(-50%)',
+                                                    cursor: 'pointer'
                                                 }}
                                             >
                                                 {show ? <BoEyeClosed width={20} /> : <BoEye width={20} />}
                                             </span>
-                                        </div>    
+                                        </div>
                                     )}
                                 />
-                                {errors.password && (
-                                    <Error>{errors.password.message}</Error>
-                                )}
+                                {errors.password && <Error>{errors.password.message}</Error>}
                             </div>
                         </FieldWrapper>
-                        <Button style={{marginTop: 10, width: '100%' }} themeColor='primary' type="submit">Login</Button>
+
+                        <CustomKendoButton
+                            label={loginMutation.isPending ? 'Logging in...' : 'Login'}
+                            align="center"
+                            style={{
+                                marginTop: 30,
+                                width: '100%',
+                                fontWeight: 600,
+                                padding: '10px 0',
+                                backgroundColor: '#28a745',  // hijau
+                                color: '#fff',
+                                borderRadius: 8,
+                                border: 'none',
+                            }}
+                            onClick={handleSubmit(onSubmit)}
+                        />
                     </CardBody>
                 </Card>
             </form>
         </div>
     )
-}   
+}

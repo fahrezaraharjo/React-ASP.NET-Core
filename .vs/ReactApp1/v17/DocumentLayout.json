@@ -1,16 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Workspace\\.NET\\React-ASP.NET-Core\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{21C93D2C-8FA3-4F98-89F6-016E6FFC91F0}|ReactApp1.API\\ReactApp1.API.csproj|d:\\workspace\\.net\\react-asp.net-core\\reactapp1.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21C93D2C-8FA3-4F98-89F6-016E6FFC91F0}|ReactApp1.API\\ReactApp1.API.csproj|solutionrelative:reactapp1.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21C93D2C-8FA3-4F98-89F6-016E6FFC91F0}|ReactApp1.API\\ReactApp1.API.csproj|d:\\workspace\\.net\\react-asp.net-core\\reactapp1.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21C93D2C-8FA3-4F98-89F6-016E6FFC91F0}|ReactApp1.API\\ReactApp1.API.csproj|solutionrelative:reactapp1.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\fahre\\OneDrive\\Dokumen\\belajar\\React-ASP.NET-Core\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,8 +9,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 647,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": -1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -35,32 +30,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Workspace\\.NET\\React-ASP.NET-Core\\ReactApp1.API\\Program.cs",
-              "RelativeDocumentMoniker": "ReactApp1.API\\Program.cs",
-              "ToolTip": "D:\\Workspace\\.NET\\React-ASP.NET-Core\\ReactApp1.API\\Program.cs",
-              "RelativeToolTip": "ReactApp1.API\\Program.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAkwCsAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T03:48:43.778Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\Workspace\\.NET\\React-ASP.NET-Core\\ReactApp1.API\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "ReactApp1.API\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\Workspace\\.NET\\React-ASP.NET-Core\\ReactApp1.API\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "ReactApp1.API\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T03:47:27.975Z",
-              "EditorCaption": ""
             }
           ]
         }

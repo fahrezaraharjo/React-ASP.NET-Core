@@ -75,8 +75,15 @@ const config: UserConfig = {
                 target,
                 secure: false,
             },
+            '^/api/.*': {
+                target,
+                secure: false,
+                changeOrigin: true,
+                rewrite: (path) => path, 
+            },
         },
     },
+
 };
 
 export default defineConfig(config);
