@@ -1,23 +1,17 @@
 import { useApiMutation } from './useApiMutation';
+import {IApiResponse} from "../types/IApiResponse";
 
-interface LoginResponse {
-    token: string;
-    user: {
-        id: number;
-        name: string;
-        email: string;
-    };
-}
+interface LoginResponse extends IApiResponse<String> {}
 
 interface LoginPayload extends Record<string, unknown> {
-    email: string;
+    username: string;
     password: string;
 }
 
 export function useLogin() {
     return useApiMutation<LoginResponse, LoginPayload>(
         {
-            endpoint: '/api/login',
+            endpoint: 'login',
             method: 'POST',
         },
         {

@@ -9,12 +9,14 @@
     <PackageJsonScriptsBuild Condition="$(PackageJsonScriptsBuild) == ''">vite build</PackageJsonScriptsBuild>
     <PackageJsonScriptsLint Condition="$(PackageJsonScriptsLint) == ''">eslint .</PackageJsonScriptsLint>
     <PackageJsonScriptsPreview Condition="$(PackageJsonScriptsPreview) == ''">vite preview</PackageJsonScriptsPreview>
+    <PackageJsonDependenciesHookformResolvers Condition="$(PackageJsonDependenciesHookformResolvers) == ''">^5.2.1</PackageJsonDependenciesHookformResolvers>
     <PackageJsonDependenciesProgressKendoReactAnimation Condition="$(PackageJsonDependenciesProgressKendoReactAnimation) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactAnimation>
     <PackageJsonDependenciesProgressKendoReactButtons Condition="$(PackageJsonDependenciesProgressKendoReactButtons) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactButtons>
     <PackageJsonDependenciesProgressKendoReactDataTools Condition="$(PackageJsonDependenciesProgressKendoReactDataTools) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactDataTools>
     <PackageJsonDependenciesProgressKendoReactDateinputs Condition="$(PackageJsonDependenciesProgressKendoReactDateinputs) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactDateinputs>
     <PackageJsonDependenciesProgressKendoReactDialogs Condition="$(PackageJsonDependenciesProgressKendoReactDialogs) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactDialogs>
     <PackageJsonDependenciesProgressKendoReactDropdowns Condition="$(PackageJsonDependenciesProgressKendoReactDropdowns) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactDropdowns>
+    <PackageJsonDependenciesProgressKendoReactForm Condition="$(PackageJsonDependenciesProgressKendoReactForm) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactForm>
     <PackageJsonDependenciesProgressKendoReactGrid Condition="$(PackageJsonDependenciesProgressKendoReactGrid) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactGrid>
     <PackageJsonDependenciesProgressKendoReactIndicators Condition="$(PackageJsonDependenciesProgressKendoReactIndicators) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactIndicators>
     <PackageJsonDependenciesProgressKendoReactInputs Condition="$(PackageJsonDependenciesProgressKendoReactInputs) == ''">^11.3.1</PackageJsonDependenciesProgressKendoReactInputs>
@@ -35,6 +37,7 @@
     <PackageJsonDependenciesReactDom Condition="$(PackageJsonDependenciesReactDom) == ''">^19.1.0</PackageJsonDependenciesReactDom>
     <PackageJsonDependenciesReactHookForm Condition="$(PackageJsonDependenciesReactHookForm) == ''">^7.61.1</PackageJsonDependenciesReactHookForm>
     <PackageJsonDependenciesReactRouterDom Condition="$(PackageJsonDependenciesReactRouterDom) == ''">^7.7.1</PackageJsonDependenciesReactRouterDom>
+    <PackageJsonDependenciesSolarIconReact Condition="$(PackageJsonDependenciesSolarIconReact) == ''">^1.1.0</PackageJsonDependenciesSolarIconReact>
     <PackageJsonDependenciesZod Condition="$(PackageJsonDependenciesZod) == ''">^4.0.14</PackageJsonDependenciesZod>
     <PackageJsonDependenciesZustand Condition="$(PackageJsonDependenciesZustand) == ''">^5.0.7</PackageJsonDependenciesZustand>
     <PackageJsonDevdependenciesEslintJs Condition="$(PackageJsonDevdependenciesEslintJs) == ''">^9.30.1</PackageJsonDevdependenciesEslintJs>

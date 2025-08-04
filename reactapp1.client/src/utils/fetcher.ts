@@ -19,6 +19,7 @@ export const fetcher = async <T>(
             ...headers,
         },
         ...(body ? { body: isFormData ? body : JSON.stringify(body) } : {}),
+        // Hanya aktifkan ini jika kamu benar-benar perlu cookie dikirim ke domain lain
         credentials: 'include',
     });
 
@@ -27,7 +28,7 @@ export const fetcher = async <T>(
         let errorMessage = 'Request failed';
 
         try {
-            if (contentType && contentType.includes('application/json')) {
+            if (contentType?.includes('application/json')) {
                 const error = await res.json();
                 errorMessage = error.message || error.error || errorMessage;
             } else {
@@ -40,7 +41,6 @@ export const fetcher = async <T>(
         throw new Error(errorMessage);
     }
 
-    // No Content
     if (res.status === 204) {
         return null as T;
     }
