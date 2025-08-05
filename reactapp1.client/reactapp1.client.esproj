@@ -12,9 +12,9 @@
     <Script Include="tsconfig.json" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="src\assets\css\" />
     <Folder Include="src\components\components\" />
     <Folder Include="src\components\layouts\" />
-    <Folder Include="src\components\ui\" />
     <Folder Include="src\constants\" />
     <Folder Include="src\pages\" />
   </ItemGroup>
