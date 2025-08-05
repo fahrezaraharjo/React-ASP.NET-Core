@@ -9,10 +9,10 @@ import * as z from 'zod'
 import { LoginSchema } from "../../../utils/validations/loginSchema"
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardBody, CardHeader } from "@progress/kendo-react-layout"
-import { useApiMutation } from '../../../hooks'
-import { showSuccessToast, showErrorToast } from '../../../utils/toast'
 import bgImage from '../../../assets/bgLogin.png'
 import CustomKendoButton from '../../CustomButton'
+import { useLogin } from '../../../hooks/useLogin'
+
 
 type LoginResponse = {
     status: number
@@ -24,7 +24,6 @@ type ILoginForm = z.infer<typeof LoginSchema>
 
 export default function LoginForm() {
     const [show, setShow] = useState(false)
-
     const {
         control,
         formState: { errors },
@@ -37,31 +36,11 @@ export default function LoginForm() {
             password: ''
         }
     })
-
-    const loginMutation = useApiMutation<LoginResponse, ILoginForm>({
-        url: '/api/auth/login',
-        method: 'POST',
-        options: {
-            onSuccess: (data) => {
-                sessionStorage.setItem('token', data.data)
-                showSuccessToast('Login berhasil!')
-            },
-            onError: () => {
-                setError('username', {
-                    type: 'manual',
-                    message: 'Login gagal. Periksa kembali username atau password.',
-                })
-                showErrorToast('Login gagal. Username atau password salah.')
-            }
-        }
-    })
-
+    const loginMutation = useLogin(setError)
     const onSubmit = (values: ILoginForm) => {
         loginMutation.mutate(values)
     }
-
     const toggleShow = () => setShow(prev => !prev)
-
     return (
         <div style={{
             position: 'fixed',

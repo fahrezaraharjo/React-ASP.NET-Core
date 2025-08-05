@@ -1,24 +1,35 @@
-import { useApiMutation } from './useApiMutation';
-import {IApiResponse} from "../types/IApiResponse";
+// hooks/useLogin.ts
+import { useApiMutation } from './useApiMutation'
+import { showSuccessToast, showErrorToast } from '../utils/toast'
+import type { UseFormSetError } from 'react-hook-form'
 
-interface LoginResponse extends IApiResponse<String> {}
-
-interface LoginPayload extends Record<string, unknown> {
-    username: string;
-    password: string;
+type LoginPayload = {
+  username: string
+  password: string
 }
 
-export function useLogin() {
-    return useApiMutation<LoginResponse, LoginPayload>(
-        {
-            endpoint: 'login',
-            method: 'POST',
-        },
-        {
-            onSuccess: (data) => {
+type LoginResponse = {
+  status: number
+  message: string
+  data: string
+}
 
-                document.cookie = `token=${data.token}; path=/; max-age=86400`; // 1 hari
-            },
-        }
-    );
+export const useLogin = (setError: UseFormSetError<LoginPayload>) => {
+  return useApiMutation<LoginResponse, LoginPayload>({
+    url: '/api/auth/login',
+    method: 'POST',
+    options: {
+      onSuccess: (data) => {
+        sessionStorage.setItem('token', data.data)
+        showSuccessToast('Login berhasil!')
+      },
+      onError: () => {
+        setError('username', {
+          type: 'manual',
+          message: 'Login gagal. Periksa kembali username atau password.',
+        })
+        showErrorToast('Login gagal. Username atau password salah.')
+      },
+    },
+  })
 }
