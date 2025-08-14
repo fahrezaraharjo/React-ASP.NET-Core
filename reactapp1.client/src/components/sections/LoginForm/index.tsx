@@ -10,8 +10,8 @@ import { LoginSchema } from "../../../utils/validations/loginSchema"
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardBody, CardHeader } from "@progress/kendo-react-layout"
 import bgImage from '../../../assets/bgLogin.webp'
-import CustomKendoButton from '../../CustomButton'
 import { useLogin } from '../../../hooks/useLogin'
+import CustomKendoButton from '../../ui/Button'
 
 type ILoginForm = z.infer<typeof LoginSchema>
 
@@ -133,7 +133,7 @@ export default function LoginForm() {
                                 width: '100%',
                                 fontWeight: 600,
                                 padding: '10px 0',
-                                backgroundColor: '#28a745',  
+                                backgroundColor: '#28a745',   
                                 color: '#fff',
                                 borderRadius: 8,
                                 border: 'none',

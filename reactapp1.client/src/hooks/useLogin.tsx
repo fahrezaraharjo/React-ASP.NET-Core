@@ -1,6 +1,8 @@
 import { useApiMutation } from './useApiMutation'
 import { showSuccessToast, showErrorToast } from '../utils/toast'
 import type { UseFormSetError } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
+
 
 type LoginPayload = {
   username: string
@@ -14,6 +16,8 @@ type LoginResponse = {
 }
 
 export const useLogin = (setError: UseFormSetError<LoginPayload>) => {
+  const navigate = useNavigate()
+
   return useApiMutation<LoginResponse, LoginPayload>({
     url: '/api/auth/login',
     method: 'POST',
@@ -21,6 +25,7 @@ export const useLogin = (setError: UseFormSetError<LoginPayload>) => {
       onSuccess: (data) => {
         sessionStorage.setItem('token', data.data)
         showSuccessToast('Login berhasil!')
+        navigate('/report'); 
       },
       onError: () => {
         setError('username', {
